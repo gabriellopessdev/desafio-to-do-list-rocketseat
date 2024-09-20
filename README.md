@@ -1,50 +1,89 @@
-# React + TypeScript + Vite
+# To-Do List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação de lista de tarefas (To-Do List) desenvolvida com **React** e **TypeScript**, que permite ao usuário adicionar, marcar como concluída e remover tarefas da lista.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar uma nova tarefa.
+- Marcar/desmarcar uma tarefa como concluída.
+- Remover uma tarefa da lista.
+- Contador de tarefas concluídas e pendentes.
+- Design responsivo utilizando Tailwind CSS.
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces de usuário.
+- [TypeScript](https://www.typescriptlang.org/) - Superset do JavaScript que adiciona tipagem estática.
+- [Vite](https://vitejs.dev/) - Ferramenta de build para projetos frontend modernos.
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitário para estilização.
+- [UUID](https://www.npmjs.com/package/uuid) - Biblioteca para geração de IDs únicos.
 
-- Configure the top-level `parserOptions` property like this:
+## Como Executar o Projeto
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Pré-requisitos
+
+Antes de começar, certifique-se de ter o [Node.js](https://nodejs.org/en/) e o [npm](https://www.npmjs.com/) instalados em sua máquina.
+
+### Passo a Passo
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   ```
+
+2. **Acesse a pasta do projeto:**
+
+   ```bash
+   cd nome-do-repositorio
+   ```
+
+3. **Instale as dependências:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Execute o projeto:**
+
+   ```bash
+   npm run dev
+   ```
+
+   O aplicativo estará disponível no endereço: `http://localhost:3000`.
+
+## Estrutura do Projeto
+
+```
+src/
+│
+├── components/
+│   ├── Header.tsx      # Componente de cabeçalho
+│   ├── HeaderTasks.tsx # Componente de cabeçalho das Tarefas
+│   ├── Input.tsx       # Componente para adicionar tarefas
+│   └── Task.tsx        # Componente para exibir e gerenciar tarefas
+│
+├── App.tsx             # Componente principal da aplicação
+├── main.tsx           # Ponto de entrada da aplicação
+└── index.css           # Arquivo de estilos (Tailwind CSS)
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Licença
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+---
+
+Feito por [Gabriel Lopes](https://github.com/gabriellopessdev)
+```
+
+### Instruções para o GitHub:
+
+1. Coloque este conteúdo no arquivo `README.md` na raiz do seu projeto.
+2. Suba as mudanças no seu repositório GitHub com os seguintes comandos:
+
+```bash
+git add README.md
+git commit -m "Adiciona README"
+git push origin main
 ```
